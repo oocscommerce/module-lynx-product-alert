@@ -1,0 +1,15 @@
+"Shown while the unsubscribe link of a stock alert email is followed: confirms it, then returns to the product page"
+type StockAlertUnsubscribe @component(
+  code: "default_stock_alert_unsubscribe"
+  template: "OOCS_LynxProductAlert::Components/StockAlertUnsubscribe"
+  provider: "OOCS\\LynxProductAlert\\Provider\\StockAlertUnsubscribe"
+  label: "Stock Alert Unsubscribe"
+  group: "general"
+  icon: "ph-bell-slash"
+  zones: ["content"]
+  availableOn: ["productalert_unsubscribe_email"]
+) {
+  action: String! @optional
+  product_id: Int! @optional
+  labels: StringMap! @optional
+}

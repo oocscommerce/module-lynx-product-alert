@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © OOCS Commerce (https://www.oocscommerce.com). All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="lynx_no_cacheable"/>
+    <head>
+        <meta name="robots" content="NOINDEX,NOFOLLOW"/>
+    </head>
+    <body>
+        <referenceBlock name="lynx.inertia">
+            <arguments>
+                <argument name="ssr" xsi:type="boolean">false</argument>
+            </arguments>
+        </referenceBlock>
+        <!-- Controller\Unsubscribe\Email sets the product on this block; core's productalert_unsubscribe_email.xml is not read -->
+        <referenceContainer name="lynx.main.container">
+            <block class="Magento\Framework\View\Element\Template" name="unsubscription_form"/>
+        </referenceContainer>
+    </body>
+</page>

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © OOCS Commerce (https://www.oocscommerce.com). All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="OOCS\LynxPageBuilder\Model\PreviewPagebuilder">
+        <arguments>
+            <argument name="pages" xsi:type="array">
+                <!-- Sample data: the controller sends a guest to sign in, and the real page posts away at once. -->
+                <item name="stock_alert_unsubscribe" xsi:type="array">
+                    <item name="sort_order" xsi:type="number">91</item>
+                    <item name="label" xsi:type="string">Stock alert unsubscribe page</item>
+                    <item name="group" xsi:type="string">Other</item>
+                    <item name="path" xsi:type="string">productalert_unsubscribe_email</item>
+                    <item name="route" xsi:type="string">productalert/unsubscribe/email</item>
+                    <item name="sample_data" xsi:type="boolean">true</item>
+                </item>
+            </argument>
+        </arguments>
+    </type>
+</config>

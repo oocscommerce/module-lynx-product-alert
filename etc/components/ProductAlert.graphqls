@@ -1,0 +1,28 @@
+"A link to be emailed when the price drops. Shown when Catalog > Product Alerts allows price alerts"
+type ProductPriceAlert @component(
+  code: "default_product_price_alert"
+  template: "OOCS_LynxProductAlert::Components/ProductAlert"
+  provider: "OOCS\\LynxProductAlert\\Provider\\PriceAlert"
+  label: "Price Alert"
+  group: "product_attribute"
+  icon: "ph-trend-down"
+  zones: ["content"]
+  availableOn: ["catalog_product_view*"]
+) {
+  "Empty when the alert does not apply to this product"
+  url: String! @optional
+  label: String! @optional
+}
+
+"A link to be emailed when the product is back in stock. Shown on an out-of-stock product when Catalog > Product Alerts allows stock alerts"
+type ProductStockAlert @component(
+  code: "default_product_stock_alert"
+  template: "OOCS_LynxProductAlert::Components/ProductAlert"
+  provider: "OOCS\\LynxProductAlert\\Provider\\StockAlert"
+  label: "Stock Alert"
+  group: "product_attribute"
+  icon: "ph-bell"
+  zones: ["content"]
+  availableOn: ["catalog_product_view*"]
+) @inherit(from: "ProductPriceAlert")
+# Fields as ProductPriceAlert. The file must not end on ")": Magento's GraphQL code sniffer aborts on it

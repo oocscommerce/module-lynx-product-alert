@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © OOCS Commerce (https://www.oocscommerce.com). All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+    <module name="OOCS_LynxProductAlert">
+        <sequence>
+            <module name="OOCS_LynxComponent"/>
+            <!-- AddProductAlertLayouts adds the links to the product layouts InstallCatalogLayouts writes. -->
+            <module name="OOCS_LynxCatalog"/>
+            <!-- The unsubscribe page's layout row and its preview entry. -->
+            <module name="OOCS_LynxPageBuilder"/>
+            <!-- lynx_no_cacheable handle and formKeyStore. -->
+            <module name="OOCS_LynxTheme"/>
+            <!-- Group of the unsubscribe page. -->
+            <module name="OOCS_LynxThemeComponent"/>
+            <!-- Helper\Data for the links, controllers for sign-up and unsubscribe. -->
+            <module name="Magento_ProductAlert"/>
+        </sequence>
+    </module>
+</config>
